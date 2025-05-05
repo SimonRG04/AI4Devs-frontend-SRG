@@ -1,0 +1,371 @@
+/* Estilos generales para el contenedor */
+.position-detail-container {
+  height: calc(100vh - 70px); /* Ajustar según el tamaño de tu header */
+  overflow: hidden;
+  background-color: #f8f9fa;
+  padding: 1.5rem !important;
+}
+
+/* Estilos para Breadcrumb */
+.breadcrumb {
+  font-size: 0.85rem;
+  background-color: transparent;
+  padding: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+}
+
+.breadcrumb-link {
+  cursor: pointer;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-link:hover {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.breadcrumb-item.active {
+  color: #343a40;
+  font-weight: 600;
+}
+
+/* Título de la posición */
+.position-title {
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 0;
+  font-size: 1.75rem;
+}
+
+/* Stats de candidatos */
+.candidate-stats {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1.2rem;
+  border-right: 1px solid #e9ecef;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #6c757d;
+  margin-top: 0.2rem;
+}
+
+/* Botón de volver */
+.back-button {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  margin-right: 1rem;
+}
+
+.back-button:hover {
+  background-color: #0d6efd;
+  color: white;
+  transform: translateX(-3px);
+}
+
+/* Estilos para el tablero Kanban */
+.kanban-board {
+  display: flex;
+  overflow-x: auto;
+  height: calc(100vh - 200px);
+  padding: 1rem 0.5rem 1.5rem;
+  margin-top: 1.5rem;
+  scrollbar-width: thin;
+}
+
+.kanban-board::-webkit-scrollbar {
+  height: 8px;
+}
+
+.kanban-board::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.kanban-board::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.kanban-board::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
+}
+
+/* Estilos para las columnas */
+.kanban-column {
+  flex: 0 0 300px;
+  margin: 0 0.75rem;
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+  transition: transform 0.2s ease;
+}
+
+.kanban-column:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Contador de candidatos */
+.column-counter {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #495057;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  margin-left: 0.5rem;
+}
+
+/* Estilos para el encabezado de la columna */
+.column-header {
+  padding: 0.9rem 1rem;
+  background: linear-gradient(to right, #f8f9fa, #e9ecef);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-bottom: 1px solid #dee2e6;
+  margin: 0;
+  text-align: center;
+  font-weight: 600;
+  color: #495057;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para el contenido de la columna */
+.column-content {
+  padding: 1rem;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 100px;
+  scrollbar-width: thin;
+  transition: background-color 0.2s ease;
+}
+
+.column-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.column-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.column-content::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  border-radius: 5px;
+}
+
+.column-content::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Estilos para las tarjetas de candidatos */
+.candidate-card {
+  margin-bottom: 0.75rem;
+  cursor: grab;
+  transition: all 0.3s ease;
+  border: none !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.candidate-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-3px);
+}
+
+.candidate-card:active {
+  cursor: grabbing;
+  transform: scale(0.98);
+}
+
+.candidate-card .card-body {
+  padding: 0.75rem 1rem !important;
+}
+
+.candidate-name {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #212529;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.candidate-name::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #28a745;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.candidate-score {
+  color: #ffc107;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.candidate-score-empty {
+  color: #adb5bd;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+/* Animación de arrastre */
+.candidate-card.is-dragging {
+  opacity: 0.9;
+  transform: rotate(1deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Estilos para el modal de detalle de candidato */
+.candidate-modal-title {
+  font-weight: 600;
+  color: #212529;
+  font-size: 1.4rem;
+}
+
+.candidate-detail-subtitle {
+  color: #495057;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.candidate-detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.detail-icon {
+  color: #6c757d;
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.detail-label {
+  font-weight: 500;
+  color: #6c757d;
+  margin-right: 0.5rem;
+  min-width: 100px;
+}
+
+.detail-value {
+  font-weight: 400;
+  color: #212529;
+}
+
+.candidate-detail-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  border-top: 1px dashed #e9ecef;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .kanban-board {
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0.5rem;
+  }
+
+  .kanban-column {
+    flex: 0 0 auto;
+    width: 100%;
+    margin: 0 0 1rem 0;
+    max-height: none;
+  }
+
+  .position-detail-container {
+    height: auto;
+    overflow: auto;
+    padding: 1rem !important;
+  }
+  
+  .back-button {
+    width: 34px;
+    height: 34px;
+    margin-right: 0.5rem;
+  }
+  
+  .position-title {
+    font-size: 1.4rem;
+  }
+  
+  .stat-item {
+    padding: 0.5rem 0.7rem;
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  .candidate-detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .detail-label {
+    min-width: auto;
+    margin-bottom: 0.25rem;
+  }
+  
+  .detail-icon {
+    margin-bottom: 0.25rem;
+  }
+} 
